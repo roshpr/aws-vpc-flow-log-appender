@@ -133,8 +133,13 @@ const decorateRecords = (records, mapping) => {
         };
 
         if (eniData) {
-          result['security-group-ids'] = eniData.securityGroupIds;
+          let gName = eniData.securityGroupName.toString()
+          let sg_id_name = eniData.securityGroupIds + '-' + gName;
+          result['security-group-ids'] = sg_id_name;
+          result['security-group-name'] = eniData.securityGroupName;
           result['direction'] = (match[5] == eniData.ipAddress) ? 'inbound' : 'outbound';
+          result['subnet-id'] = eniData.subnetId;
+          result['vpc-id'] = eniData.vpcId;
         }
         else {
           console.log(`No ENI data found for interface ${match[3]}`);
