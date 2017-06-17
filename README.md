@@ -1,3 +1,9 @@
+# Changes to the Appender
+
+Changes to fetch Interface tags and name the interface by appending the tag name to interface name.
+Changes to append security group Name to Security group
+These changes helps in easily identifying the interfaces & there security groups easily when customizating Kibana dashboards.
+
 # aws-vpc-flow-log-appender
 
 aws-vpc-flow-log-appender is a sample project that enriches AWS [VPC Flow Log](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html) data with additional information, primarily the Security Groups associated with the instances to which requests are flowing.
