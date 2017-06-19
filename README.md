@@ -4,6 +4,13 @@
 2. Append security group Name to Security group
 3. Include VPC and Subnet ID
 4. These changes helps in easily identifying VPC, Subnets, interfaces & there security groups easily when customizating Kibana dashboards.
+
+# Steps to include the changes
+
+1. Follow the steps in [blog post](https://aws.amazon.com/blogs/security/how-to-visualize-and-refine-your-networks-security-by-adding-security-group-ids-to-your-vpc-flow-logs/)
+2. Instead of using AWS appender use my customized appender and upload it via the cloud formation script provided.
+3. Apply the elastic search mapping (elasticsearch_cwl.logs_mapping_template.json) provided in the visualizers directory. The mapping changes the geo coordinates data types required for Kibana to map location.
+4. Import the Kibana dashboard VPCNetwork_with_Map_Dashboard.json into the Kibana tool to visualize your network workflow.
  
 # aws-vpc-flow-log-appender
 
